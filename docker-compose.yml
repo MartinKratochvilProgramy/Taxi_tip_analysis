@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - taxi-trip-data:/var/lib/postgresql/data
+
+volumes:
+  taxi-trip-data:
